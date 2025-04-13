@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فستانك</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <h1>متجر فستانك</h1>
+        <nav>
+            <ul>
+                <li><a href="#kids-dresses">فساتين الأطفال</a></li>
+                <li><a href="#hijab-dresses">فساتين المحجبات</a></li>
+                <li><a href="#non-hijab-dresses">فساتين غير المحجبات</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="kids-dresses">
+            <h2>فساتين الأطفال</h2>
+            <div class="dress-card">
+                <img src="kids-dress1.jpg" alt="فستان للأطفال 1">
+                <h3>فستان أطفال 1</h3>
+                <p>سعر: 300 جنيه مصري</p>
+                <button onclick="openPaymentOptions('300')">شراء الآن</button>
+            </div>
+            <div class="dress-card">
+                <img src="kids-dress2.jpg" alt="فستان للأطفال 2">
+                <h3>فستان أطفال 2</h3>
+                <p>سعر: 620 جنيه مصري</p>
+                <button onclick="openPaymentOptions('620')">شراء الآن</button>
+            </div>
+        </section>
+
+        <section id="hijab-dresses">
+            <h2>فساتين المحجبات</h2>
+            <div class="dress-card">
+                <img src="hijab-dress1.jpg" alt="فستان محجبات 1">
+                <h3>فستان محجبات 1</h3>
+                <p>سعر: 1050 جنيه مصري</p>
+                <button onclick="openPaymentOptions('1050')">شراء الآن</button>
+            </div>
+            <div class="dress-card">
+                <img src="hijab-dress2.jpg" alt="فستان محجبات 2">
+                <h3>فستان محجبات 2</h3>
+                <p>سعر: 1750 جنيه مصري</p>
+                <button onclick="openPaymentOptions('1750')">شراء الآن</button>
+            </div>
+        </section>
+
+        <section id="non-hijab-dresses">
+            <h2>فساتين غير المحجبات</h2>
+            <div class="dress-card">
+                <img src="non-hijab-dress1.jpg" alt="فستان غير محجبات 1">
+                <h3>فستان غير محجبات 1</h3>
+                <p>سعر: 1300 جنيه مصري</p>
+                <button onclick="openPaymentOptions('1300')">شراء الآن</button>
+            </div>
+            <div class="dress-card">
+                <img src="non-hijab-dress2.jpg" alt="فستان غير محجبات 2">
+                <h3>فستان غير محجبات 2</h3>
+                <p>سعر: 1600 جنيه مصري</p>
+                <button onclick="openPaymentOptions('1600')">شراء الآن</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 جميع الحقوق محفوظة لمتجر فستانك.</p>
+    </footer>
+
+    <script>
+        function openPaymentOptions(price) {
+            const paymentMethod = prompt("اختر طريقة الدفع (1. كاش 2. حساب بنكي)", "1");
+            if (paymentMethod === '1') {
+                alert(تم اختيار الدفع كاش. السعر: ${price} جنيه مصري.);
+            } else if (paymentMethod === '2') {
+                const bankDetails = prompt("يرجى إدخال تفاصيل الحساب البنكي.");
+                alert(`تم اختيار الدفع بالحساب البنكي. السعر: ${price
